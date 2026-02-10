@@ -26,6 +26,7 @@
       border: none;
       border-radius: 30px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
     #message {
@@ -41,26 +42,55 @@
       font-size: 18px;
       max-width: 90%;
       line-height: 1.5;
+      min-height: 120px;
     }
   </style>
 
   <script>
+    let step = 0;
+
     function missMe() {
-      // change background
-      document.body.style.background =
-        "url('DSC_1882.JPG') no-repeat center center fixed";
-      document.body.style.backgroundSize = "cover";
+      step++;
 
-      // fade out intro text
-      document.getElementById("title").style.opacity = "0";
-      document.getElementById("intro1").style.opacity = "0";
-      document.getElementById("intro2").style.opacity = "0";
+      if (step === 1) {
+        document.getElementById("btn").textContent = "pakkaa?";
+      }
+      else if (step === 2) {
+        document.getElementById("btn").textContent = "really you miss meee?";
+       
+      }
+      else if (step === 3) {
+          document.getElementById("btn").textContent = "Fineee,see the magic okay baby?😊";
+      }
+      else if (step === 4) {
+       
+        document.body.style.background =
+          "url('DSC_1882.JPG') no-repeat center center fixed";
+        document.body.style.backgroundSize = "cover";
 
-      // hide button
-      document.getElementById("btn").style.display = "none";
+        document.getElementById("title").style.opacity = "0";
+        document.getElementById("intro1").style.opacity = "0";
+        document.getElementById("intro2").style.opacity = "0";
 
-      // show message
-      document.getElementById("message").style.display = "block";
+        
+        document.getElementById("btn").style.display = "none";
+
+       
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").innerHTML = `
+          Mrs. Srivani Reddy Srihari,<br>
+          you are always in my heart ❤️<br><br>
+
+          I miss you more than words can say,<br>
+          &amp; thank you for always supporting me.<br><br>
+
+          I’ll prove every day, every second,<br>
+          how much I love you<br>
+          and how madly in love with you I am.<br><br>
+
+          Okay, my Kanmaniiiii? ❤️😊
+        `;
+      }
     }
   </script>
 </head>
@@ -68,23 +98,10 @@
 <body>
   <h1 id="title">Oyiii my KANMANNI ❤️</h1>
   <p id="intro1">I made this just for you.</p>
-  <p id="intro2">You make my world better every day.</p>
+  <p id="intro2">Tap on the button.</p>
 
   <button id="btn" onclick="missMe()">Tap if you miss me 💕</button>
 
-  <div id="message">
-    Mrs. Srivani Reddy Srihari,<br>
-    you are always in my heart ❤️<br><br>
-
-    I miss you more than words can say,<br>
-    &amp; thank you for always supporting me.<br><br>
-
-    I’ll prove every day, every second,<br>
-    how much I love you<br>
-    and how madly in love with you I am.<br><br>
-
-    Okay, my Kanmaniiiii? ❤️
-  </div>
+  <div id="message"></div>
 </body>
 </html>
-
